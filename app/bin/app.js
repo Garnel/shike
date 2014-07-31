@@ -1,0 +1,1 @@
+sumeru.config({httpServerPort:8080,sumeruPath:"/../sumeru"}),sumeru.router.add({pattern:"/index",action:"App.index"}),sumeru.router.setDefault("App.index"),App.index=sumeru.controller.create(function(e,t){e.onrender=function(e){e("index",["push","left"])}});

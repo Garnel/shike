@@ -1,0 +1,4 @@
+sumeru.packages(
+'index.js'
+)
+
