@@ -6,7 +6,7 @@ sumeru.router.add(
 
 );
 
-// sumeru.router.setDefault('App.index');
+sumeru.router.setDefault('App.index');
 
 App.index = sumeru.controller.create(function(env, session){
 
