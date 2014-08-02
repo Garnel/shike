@@ -124,7 +124,7 @@ App.waitStore = sumeru.controller.create(function(env, session){
             session.bind('storeinfo_container', {
                 data:array_after_filter,
             });
-            doRender('testWaitStore', ['push', 'left']);
+            doRender('store', ['push', 'left']);
             loghu('render end');
         } catch(e){
             loghu(e.name+":"+e.message);

@@ -24,29 +24,93 @@
         background: rgb(28, 184, 65);
     }
 
-    #store-logo {
+    #store-logo, .recommend-logo {
         width: 70px;
         height: 70px;
         margin: 5px;
         border-radius: 35px;
+        float: left;
     }
 
-    #search {
+    #store-detail, .recommend-detail {
+        display: table-cell;
+        margin-left: 5px;
+        width: 100%;
+        word-wrap: nowrap;
+    }
+
+    #store-name, .recommend-name {
+        font-size: 1.3em;
+        font-weight: bold;
+        line-height: 40px;
+    }
+
+    .info-text {
+        background: rgb(202, 60, 60);
+        padding: 2px;
+        border-radius: 1px;
+    }
+
+    .recommend {
+        text-align: left;
+        padding: 0.3em;
         font-size: 1em;
+        height: 80px;
+        color: #fff;
         background: rgb(223, 117, 20);
+    }
+
+    .next {
+        height: 80px;
+        display:table-cell;
+        vertical-align: middle;
+        font-size:1.5em;
+        width: auto;
+    }
+
+    .table {
+        display: table;
+    }
+
+    .cell {
+        display: table-cell;
     }
 </style>
 <div id="logo" class="store-block">时客</div>
-<div id="store-info" class="store-block pure-g">
-    <div class="pure-u-6-24">
-        <img id="store-logo" src="http://news.059a.com/upfiles/product/20120505105359_384.jpg" alt="store logo">
-    </div>
-    <div id="detail" class="pure-u-18-24">
-        <h3 id="name">海底捞西单店</h3>
-        <div id="waiting-area">
-            <span>等位号:123</span>
-            <span>还剩:18</span>
-            <span>预计:16min</span>
+<div id="store-info" class="store-block">
+    <block tpl-id="waitinfo_container">
+        <img id="store-logo" src="{{waitinfo.picture}}" alt="store logo">
+        <div id="store-detail">
+            <span id="store-name">{{waitinfo.store_name}}</span>
+            <div id="waiting-area">
+                <div>
+                    <span>您的等位号 <span class="info-text">{{waitinfo.user_id}}</span></span>
+                    <span style="margin-left: 5px;">前面还有 <span class="info-text">{{waitinfo.num_front}}</span> 人</span>
+                </div>
+                <div style="margin-top: 5px;">
+                    <span style="margin-top: 2px;">预计还需要等 <span class="info-text">{{waitinfo.time_to_wait}}</span> 分钟</span>
+                </div>
+            </div>
         </div>
-    </div>
+    </block>
 </div>
+
+<div style="margin: 10px 5px;border-bottom: 2px solid #eee;">
+还要等这么久，不如去看看下面的东西吧～
+</div>
+
+<block tpl-id="storeinfo_container">
+    {{#each data}}
+    <div class="store-block recommend">
+        <img class="recommend-logo" src="{{picture}}" alt="store logo">
+        <div class="recommend-detail">
+            <span class="recommend-name">{{name}}</span>
+            <div>
+                <div class="recommend-disc">{{description}}</div>
+                <div class="recommend-disc">一般耗时 <span class="info-text">{{cost_time}}</span> 分钟</div>
+            </div>
+        </div>
+        <i class="next fa fa-chevron-right"></i>
+    </div>
+    {{/each}}
+</block>
