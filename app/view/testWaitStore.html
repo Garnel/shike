@@ -9,10 +9,10 @@
             <p>"还需等待":{{waitinfo.time_to_wait}}</p>
             <p>"店铺":{{waitinfo.store_name}}</p>
             <p>"前面还有":{{waitinfo.num_front}}</p>
-            "照片":<img src='{{waitinfo.picture}}'/>
+            "照片":<img src='{{waitinfo.picture}}' width=320 height=200/>
         </block>
 
-        <block tpl-id="storeinfo_container">                                                                                                                                                 
+        <block tpl-id="storeinfo_container">
         {{#each data}}
             <div class="name">name:{{name}}</div>
             {{#each coordinate}}
@@ -21,6 +21,12 @@
             <div class="description">简介:{{description}}</div>
             <div class="cost_time">一般耗时:{{cost_time}}</div>
             <div class="picture"><img src="{{picture}}" width='70' height='70'/></div>
+        {{/each}}
+        </block>
+
+        <block tpl-id="lightapp_container">
+        {{#each recoapp}}
+            <a href='{{this.url}}'><img src='{{this.pic}}' width=80 height=80/></a>
         {{/each}}
         </block>
     </body>
