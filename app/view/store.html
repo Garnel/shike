@@ -75,6 +75,11 @@
     .cell {
         display: table-cell;
     }
+
+    #social {
+        color: #fff;
+        background: rgb(66, 184, 221);
+    }
 </style>
 <div id="logo" class="store-block">时客</div>
 <div id="store-info" class="store-block">
@@ -84,7 +89,7 @@
             <span id="store-name">{{waitinfo.store_name}}</span>
             <div id="waiting-area">
                 <div>
-                    <span>您的等位号 <span class="info-text">{{waitinfo.user_id}}</span></span>
+                    <span>等位号 <span class="info-text">{{waitinfo.user_id}}</span></span>
                     <span style="margin-left: 5px;">前面还有 <span class="info-text">{{waitinfo.num_front}}</span> 人</span>
                 </div>
                 <div style="margin-top: 5px;">
@@ -93,6 +98,13 @@
             </div>
         </div>
     </block>
+</div>
+
+<div id="social" class="store-block">
+    <div style="text-align: center" class="pure-g">
+        <div id="social-chat" class="pure-u-1-2"><i class="fa fa-comment"></i>等位聊天室</div>
+        <div id="cocial-share" class="pure-u-1-2"><i class="fa fa-share"></i>分享</div>
+    </div>
 </div>
 
 <div style="margin: 10px 5px;border-bottom: 2px solid #eee;">

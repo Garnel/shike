@@ -131,8 +131,18 @@ App.waitStore = sumeru.controller.create(function(env, session){
         }
     };
 
+    env.onready = function() {
+        Library.touch.on('#social-chat', 'touchstart', openChat);
+    };
+
     var $ = function(id){
         return document.getElementById(id);
+    }
+
+    var openChat = function() {
+        var storeid = parseInt(session.get('storeid')),
+            waitnum = session.get('waitnum');
+        env.redirect('/hall',{'storeid': storeid, 'waitnum': waitnum});
     }
 });
 
