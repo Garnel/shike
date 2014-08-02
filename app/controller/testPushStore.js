@@ -54,7 +54,7 @@ App.pushStore = sumeru.controller.create(function(env, session){
                 //data:storeCollection.find({"id":parseInt(session.get("id"))})
                 data:thestore
             });
-            doRender('testStore', ['push', 'left']);
+            doRender('detail', ['push', 'left']);
             loghu('render end');
         } catch(e){
             console.log(e.name+":"+e.message);
