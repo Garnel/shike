@@ -1,0 +1,27 @@
+<html>   
+    <head>
+        <script type="text/javascript" src="http://bcs.duapp.com/cloudaui/clouda-ui-0.1.2.js"></script>
+    </head>
+    <body>
+        <gmu-calendar>
+            <script type="text/javascript">
+                clouda.ui.import("./gmu/calendar/calendar.html");
+            </script>
+        </gmu-calendar>
+        <button id="refresh">刷新</button><br/>
+        <input id="stuName"></input>
+        <button id="addStu">添加</button>
+        <br/>
+        <block tpl-id="storeinfo_container">                                                                                                                                                 
+        {{#each data}}
+            <div class="name">name:{{name}}</div>
+            {{#each coordinate}}
+                <div class="coordinates">{{this}}</div>
+            {{/each}}
+            <div class="description">简介:{{description}}</div>
+            <div class="cost_time">一般耗时:{{cost_time}}</div>
+            <div class="picture"><img src="{{picture}}" width='70' height='70'/></div>
+        {{/each}}
+        </block>
+    </body>
+</html>  
