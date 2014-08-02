@@ -1,4 +1,5 @@
 sumeru.packages(
     'index.js',
-    'store.js'
+    'store.js',
+	'hall.js'
 )

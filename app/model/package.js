@@ -1,4 +1,4 @@
 sumeru.packages(
-
+	'message.js'	
 )
 
