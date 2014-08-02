@@ -133,8 +133,8 @@ App.waitStore = sumeru.controller.create(function(env, session){
     };
 
     env.onready = function() {
-        Library.touch.on('#social-chat', 'touchstart', openChat);
-        Library.touch.on('#social-share', 'touchstart', openShare);
+        Library.touch.on('#social-chat', 'tap', openChat);
+        Library.touch.on('#social-share', 'tap', openShare);
     };
 
     var $ = function(id){
@@ -152,7 +152,13 @@ App.waitStore = sumeru.controller.create(function(env, session){
         loghu("open share");
         Blend.mbaas.socialshare.callShare({
             mediaType: "all",
-            content: "我是等位达人"
+            content: "我是等位达人",
+            onsuccess: function() {
+                alert("asdffda");
+            },
+            onfail: function() {
+                alert("asdfasdf");
+            }
         });
     }
 });

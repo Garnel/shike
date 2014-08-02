@@ -80,6 +80,11 @@
         color: #fff;
         background: rgb(66, 184, 221);
     }
+
+    #social-chat, #social-share {
+        font-size: 1.2em;
+        padding: 5px 0px;
+    }
 </style>
 <div id="logo" class="store-block">时客</div>
 <block tpl-id="waitinfo_container">
@@ -101,9 +106,7 @@
 
 <div id="social" class="store-block">
     <div style="text-align: center" class="pure-g">
-        <div id="social-chat" class="pure-u-1-2"><i class="fa fa-comment"></i>
-            <!--<a href="/hall?storeid={{waitinfo.store_id}}&waitnum={{waitinfo.user_id}}" target="_blank">-->
-            等位聊天室</div>
+        <div id="social-chat" class="pure-u-1-2"><i class="fa fa-comment"></i>等位聊天室</div>
         <div id="social-share" class="pure-u-1-2"><i class="fa fa-share"></i>分享</div>
     </div>
 </div>
