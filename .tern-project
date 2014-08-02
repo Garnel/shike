@@ -1,0 +1,16 @@
+{
+    "libs": [
+        "browser",
+        "jquery",
+        "sumeru"
+    ],
+    "loadEagerly": [
+        "app.js"
+    ],
+    "plugins": {
+        "requirejs": {
+            "baseURL": "./",
+            "paths": {}
+        }
+    }
+}
