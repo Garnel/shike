@@ -1,5 +1,5 @@
 sumeru.packages(
-	'message.js'	
+	'message.js',
     'pushStore.js',
     'waitStore.js',
 )
