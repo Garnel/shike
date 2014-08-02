@@ -89,11 +89,24 @@ App.waitStore = sumeru.controller.create(function(env, session){
         return [getWaitStores, getStores];
     };
 
+    var filterStore = function(stores, timelimit){
+        var retArray = [];
+        var len = stores.length;
+        for(var i=0; i<len; i++){
+            if(stores.get(i).cost_time <= timelimit){
+                retArray.push(stores.get(i));
+            }
+        }
+        return retArray;
+    }
+
     env.onrender = function(doRender){
         try{
+            var waittime = session.waittime;
+            var store_array = session.Store.find();
+            var array_after_filter = filterStore(store_array, waittime);
             session.bind('storeinfo_container', {
-                data:session.Store.find(),
-                waittime:session.waittime
+                data:array_after_filter,
             });
             doRender('testWaitStore', ['push', 'left']);
             loghu('render end');
