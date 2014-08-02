@@ -145,7 +145,15 @@ App.waitStore = sumeru.controller.create(function(env, session){
         var storeid = parseInt(session.get('storeid')),
             waitnum = session.get('waitnum');
         //env.redirect('/hall', {'storeid': storeid, 'waitnum': waitnum}, true);
-        window.open('/hall?storeid=' + storeid + "&waitnum=" + waitnum);
+        //window.open('/hall?storeid=' + storeid + "&waitnum=" + waitnum);
+        var url = '/hall?storeid=' + storeid + "&waitnum=" + waitnum;
+        var a = document.createElement('a');
+        a.setAttribute("href", url);
+        a.setAttribute("target", "_blank");
+
+        var dispatch = document.createEvent("HTMLEvents");
+        dispatch.initEvent("click", true, true);
+        a.dispatchEvent(dispatch);
     }
 
     var openShare = function() {
