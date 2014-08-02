@@ -1,3 +1,5 @@
+db.waitStore.drop();
+
 db.waitStore.save({
     id:1,
     name:'海底捞',
