@@ -13,15 +13,13 @@
         <button id="addStu">添加</button>
         <br/>
         <block tpl-id="storeinfo_container">                                                                                                                                                 
-        {{#each data}}
-            <div class="name">name:{{name}}</div>
-            {{#each coordinate}}
+            <div class="name">name:{{data.name}}</div>
+            {{#each data.coordinate}}
                 <div class="coordinates">{{this}}</div>
             {{/each}}
-            <div class="description">简介:{{description}}</div>
-            <div class="cost_time">一般耗时:{{cost_time}}</div>
-            <div class="picture"><img src="{{picture}}" width='70' height='70'/></div>
-        {{/each}}
+            <div class="description">简介:{{data.description}}</div>
+            <div class="cost_time">一般耗时:{{data.cost_time}}</div>
+            <div class="picture"><img src="{{data.picture}}" width='70' height='70'/></div>
         </block>
     </body>
 </html>  
