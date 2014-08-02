@@ -76,6 +76,19 @@
         display: table-cell;
     }
 
+    .cell-1-4 {
+        display: table-cell;
+        width: 25%;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .cell-1-4 > img {
+        vertical-align: middle;
+        width: 95%;
+        border-radius: 5px;
+    }
+
     #social {
         color: #fff;
         background: rgb(66, 184, 221);
@@ -130,4 +143,12 @@
         <i class="next fa fa-chevron-right"></i>
     </div>
     {{/each}}
+</block>
+
+<block tpl-id="lightapp_container">
+    <div class="store-block recommend table">
+        {{#each recoapp}}
+            <a href='{{this.url}}' class="cell-1-4"><img src='{{this.pic}}'/></a>
+        {{/each}}
+    </div>
 </block>
