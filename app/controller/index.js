@@ -23,7 +23,8 @@ App.index = sumeru.controller.create(function(env, session){
     var scanQr = function() {
         clouda.device.qr.startCapture({
             onsuccess: function(data){
-                console.log("success", data);
+                console.log("open link: ", data);
+                window.open(data,"_self");
             },
             onfail: function(err){
                 console.log("fail", err);

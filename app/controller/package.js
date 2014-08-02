@@ -1,6 +1,6 @@
 sumeru.packages(
-'index.js',
-'testPushStore.js',
-'testWaitStore.js'
+    'index.js',
+    'testPushStore.js',
+    'testWaitStore.js',
+    'store.js'
 )
-
