@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script type="text/javascript" src="http://bcs.duapp.com/cloudaui/clouda-ui-0.1.2.js"></script>
+    </head>
+
+    <body>
+        <block tpl-id="waitinfo_container">
+            <p>"你的编号":{{waitinfo.user_id}}</p>
+            <p>"还需等待":{{waitinfo.time_to_wait}}</p>
+            <p>"店铺":{{waitinfo.store_name}}</p>
+            <p>"前面还有":{{waitinfo.num_front}}</p>
+            "照片":<img src='{{waitinfo.picture}}'/>
+        </block>
+
+        <block tpl-id="storeinfo_container">                                                                                                                                                 
+        {{#each data}}
+            <div class="name">name:{{name}}</div>
+            {{#each coordinate}}
+                <div class="coordinates">{{this}}</div>
+            {{/each}}
+            <div class="description">简介:{{description}}</div>
+            <div class="cost_time">一般耗时:{{cost_time}}</div>
+            <div class="picture"><img src="{{picture}}" width='70' height='70'/></div>
+        {{/each}}
+        </block>
+    </body>
+</html>

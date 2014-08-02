@@ -10,3 +10,4 @@ test
 
 app/bin
 app/server_config
+app/logs

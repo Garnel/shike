@@ -1,0 +1,7 @@
+db.waitStore.save({
+    name:'KFC',
+    type:'restaurant',
+    coordinate:[116.4452, 39.96097],
+    description:"人气火锅海底捞",
+    picture:'kkk'
+});
