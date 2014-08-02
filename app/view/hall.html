@@ -1,20 +1,18 @@
 <link href="//libs.baidu.com/fontawesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 <style>
-	.button {
-		width:20%; 
-		height:35px;
+    html, body {
+        height: 100%;
+        min-height: 100%;
+    }
+
+	#hall{
+		height: 400px;
+        text-align: left;
+        padding: 0px;
+        overflow-y: scroll;
+        background: #fff;
 	}
-	.input-text{
-		line-height: 30px;
-		width: 75%;
-		margin-left:5px;
-	}
-	.content{
-		height:450px;
-		width:95%;
-		margin:5px;
-		border-radius: 3px;
-	}
+
     .hall-block {
         text-align: center;
         padding: 0.3em 1em;
@@ -22,30 +20,55 @@
         margin: 5px;
         box-shadow: 1px 1px 5px #888888;
     }
+
     #logo {
-        font-size: 3em;
+        font-size: 1.5em;
         background: #1f8dd6;
+        color: #fff;
         line-height: 30px;
+        text-align: center;
+        padding: 0.3em 1em;
+        border-radius: 3px;
+        box-shadow: 1px 1px 5px #888888;
+        margin: 5px;
 	}
+
 	.submit-block {
 		text-align: center;
 		margin: 5px;
 	}
-</style>
-<div>
-<div id="logo" class="hall-block">时客</div>
 
-<div align="center">
+    .message-block {
+        padding: 0.3em 1em;
+        border-radius: 3px;
+        margin: 5px;
+        box-shadow: 1px 1px 5px #888888;
+        background: rgb(66, 184, 221);
+        color: #fff;
+    }
+
+</style>
+
+<div id="logo">时客</div>
+
+<div id="hall" class="hall-block">
     <block tpl-id="message-hall">
-        <textarea readonly="readonly" class="content">
-            {{#each data}}
-            {{this.content}}
-            {{/each}}
-        </textarea><br/>
+        {{#each data}}
+        <div>
+            <div style="margin:5px;">{{this.waitnum}}:</div>
+            <div class="message-block">{{this.content}}</div>
+        </div>
+        {{/each}}
     </block>
 </div>
-<div class='.submit-block'>
-    <input id="messageInput" type="text" class="input-text" placeholder="说点什么:"/>
-	<button type="submit" class="messageSubmit button">发送</button>
-</div>
+
+<div id="submit-area" class='submit-block'>
+    <div class="pure-form pure-g">
+        <div class="pure-u-3-4">
+            <input id="messageInput" type="text" class="pure-input-1" placeholder="说点什么:"/>
+        </div>
+        <div class="pure-u-1-4">
+            <button class="messageSubmit pure-button pure-button-primary">发送</button>
+        </div>
+    </div>
 </div>

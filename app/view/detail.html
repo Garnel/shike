@@ -1,0 +1,43 @@
+<link href="//libs.baidu.com/fontawesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+<style>
+    .index-block {
+        text-align: center;
+        padding: 0.3em 1em;
+        border-radius: 3px;
+        color: #fff;
+        margin: 5px;
+        box-shadow: 1px 1px 5px #888888;
+    }
+
+    #logo {
+        font-size: 1.3em;
+        background: #1f8dd6;
+        line-height: 30px;
+	}
+	#allmap {
+		width: 96%;
+		height: 300px;
+		margin:5px;
+		border-radius: 3px;
+		position:absolute;
+		bottom:5px;
+	}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=rZmFN56CLSMBvQWkHxs4FEHn&v=1.0"></script>
+<div id="logo" class="index-block">时客</div>
+<div>
+            <p>"你的编号":18</p>
+            <p>"还需等待":20min</p>
+            <p>"店铺":海底捞</p>
+            <p>"前面还有":20人</p>
+</div>
+<div id="allmap"></div>
+<script type="text/javascript">
+	var map = new BMap.Map("allmap");
+	map.centerAndZoom(new BMap.Point(116.404, 39.915), 14);
+	var marker1 = new BMap.Marker(new BMap.Point(116.384, 39.925));  // 创建标注
+	map.addOverlay(marker1);
+	map.addControl(new BMap.ZoomControl());
+	// map.addControl(new BMap.ScaleControl());
+	map.enableScrollWheelZoom(true);
+</script>
