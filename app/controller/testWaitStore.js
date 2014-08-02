@@ -49,6 +49,22 @@ App.waitStore = sumeru.controller.create(function(env, session){
         return waitinfo;
     };
 
+    var getLightApp = function(){
+        try{
+            var recommend_app = [
+                {'url':'http://m.dianping.com/', 'pic':'http://images.liqucn.com/h004/h40/img201109221119530.jpg'},
+                {'url':'http://m.qiushibaike.com/', 'pic':'http://img4.imgtn.bdimg.com/it/u=1657999002,41923564&fm=21&gp=0.jpg'},
+                {'url':'http://m.wangfujing.com/', 'pic':'http://img1.imgtn.bdimg.com/it/u=55635788,4007731553&fm=21&gp=0.jpg'},
+                {'url':'http://m.baidu.com/', 'pic':'http://img.7xz.com/files/softimg/3343/10029748/10029748_0.png'}
+            ];
+            session.bind('lightapp_container', {
+                recoapp:recommend_app
+            });
+        } catch(e){
+            loghu(e.name+":"+e.message);
+        }
+    };
+
     var getWaitStores = function(){
         try{
             session.Store = env.subscribe('pub-waitStoreAll', function(storeCollection){
@@ -86,7 +102,7 @@ App.waitStore = sumeru.controller.create(function(env, session){
         } catch(e){
             console.log(e.name+":"+e.message);
         }
-        return [getWaitStores, getStores];
+        return [getWaitStores, getStores, getLightApp];
     };
 
     var filterStore = function(stores, timelimit){

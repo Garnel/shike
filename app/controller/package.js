@@ -3,5 +3,5 @@ sumeru.packages(
     'store.js',
 	'hall.js',
     'testPushStore.js',
-    'testWaitStore.js',
+    'testWaitStore.js'
 )
