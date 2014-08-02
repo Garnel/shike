@@ -14,7 +14,7 @@ db.pushStore.save({
     coordinate:[116.4452, 39.96097],
     description:"喝杯咖啡吧，先森",
     cost_time:30,
-    picture:'http://img3.imgtn.bdimg.com/it/u=2123556290,2516636711&fm=21&gp=0.jpg',
+    picture:'http://cdn.duitang.com/uploads/item/201212/22/20121222234031_rsQn5.thumb.600_0.jpeg',
 });
 
 
