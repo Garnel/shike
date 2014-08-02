@@ -1,12 +1,39 @@
 <link href="//libs.baidu.com/fontawesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 <style>
-    .entry {
-        display: inline-block;
+    .index-block {
+        text-align: center;
+        padding: 0.3em 1em;
+        border-radius: 3px;
+        color: #fff;
+        margin: 5px;
+        box-shadow: 1px 1px 5px #888888;
+    }
+
+    #logo {
+        font-size: 3em;
+        background: #1f8dd6;
+        line-height: 100px;
+    }
+
+    #scan_qr {
+        font-size: 1em;
+        background: rgb(28, 184, 65);
+    }
+
+    #search {
+        font-size: 1em;
+        background: rgb(223, 117, 20);;
     }
 </style>
-<h1>时客</h1>
-<div>
-    <div class="entry" id="scan_qr"><i class="fa fa-camera fa-5x"></i><br>扫描二维码</div>
-    <div class="entry" id="search"><i class="fa fa-search fa-5x"></i><br>手动搜索</div>
-    <div id="msg"></div>
+<div id="logo" class="index-block">时客</div>
+<div id="scan_qr" class="index-block"><i class="fa fa-qrcode fa-5x"></i></div>
+<div id="search" class="index-block">
+    <i class="fa fa-search fa-5x"></i>
+    <form class="pure-form">
+        <fieldset class="pure-group">
+            <input type="text" class="pure-input-1" placeholder="商铺">
+            <input type="text" class="pure-input-1" placeholder="预计消费时间">
+        </fieldset>
+        <button type="submit" class="pure-button pure-input-1-2 pure-button-primary">Go</button>
+    </form> 
 </div>
