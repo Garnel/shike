@@ -39,6 +39,7 @@ App.waitStore = sumeru.controller.create(function(env, session){
         var waittime = num_front*1.0/wsi.num_perhour*60;
 
         var waitinfo = {
+            store_id:wsi.id,
             store_name:wsi.name,
             time_to_wait:waittime,
             user_id:user_num,
@@ -133,6 +134,7 @@ App.waitStore = sumeru.controller.create(function(env, session){
 
     env.onready = function() {
         Library.touch.on('#social-chat', 'touchstart', openChat);
+        Library.touch.on('#social-share', 'touchstart', openShare);
     };
 
     var $ = function(id){
@@ -142,7 +144,16 @@ App.waitStore = sumeru.controller.create(function(env, session){
     var openChat = function() {
         var storeid = parseInt(session.get('storeid')),
             waitnum = session.get('waitnum');
-        env.redirect('/hall',{'storeid': storeid, 'waitnum': waitnum});
+        //env.redirect('/hall', {'storeid': storeid, 'waitnum': waitnum}, true);
+        window.open('/hall?storeid=' + storeid + "&waitnum=" + waitnum);
+    }
+
+    var openShare = function() {
+        loghu("open share");
+        Blend.mbaas.socialshare.callShare({
+            mediaType: "all",
+            content: "我是等位达人"
+        });
     }
 });
 

@@ -82,30 +82,32 @@
     }
 </style>
 <div id="logo" class="store-block">时客</div>
+<block tpl-id="waitinfo_container">
 <div id="store-info" class="store-block">
-    <block tpl-id="waitinfo_container">
-        <img id="store-logo" src="{{waitinfo.picture}}" alt="store logo">
-        <div id="store-detail">
-            <span id="store-name">{{waitinfo.store_name}}</span>
-            <div id="waiting-area">
-                <div>
-                    <span>等位号 <span class="info-text">{{waitinfo.user_id}}</span></span>
-                    <span style="margin-left: 5px;">前面还有 <span class="info-text">{{waitinfo.num_front}}</span> 人</span>
-                </div>
-                <div style="margin-top: 5px;">
-                    <span style="margin-top: 2px;">预计还需要等 <span class="info-text">{{waitinfo.time_to_wait}}</span> 分钟</span>
-                </div>
+    <img id="store-logo" src="{{waitinfo.picture}}" alt="store logo">
+    <div id="store-detail">
+        <span id="store-name">{{waitinfo.store_name}}</span>
+        <div id="waiting-area">
+            <div>
+                <span>等位号 <span class="info-text">{{waitinfo.user_id}}</span></span>
+                <span style="margin-left: 5px;">前面还有 <span class="info-text">{{waitinfo.num_front}}</span> 人</span>
+            </div>
+            <div style="margin-top: 5px;">
+                <span style="margin-top: 2px;">预计还需要等 <span class="info-text">{{waitinfo.time_to_wait}}</span> 分钟</span>
             </div>
         </div>
-    </block>
+    </div>
 </div>
 
 <div id="social" class="store-block">
     <div style="text-align: center" class="pure-g">
-        <div id="social-chat" class="pure-u-1-2"><i class="fa fa-comment"></i>等位聊天室</div>
-        <div id="cocial-share" class="pure-u-1-2"><i class="fa fa-share"></i>分享</div>
+        <div id="social-chat" class="pure-u-1-2"><i class="fa fa-comment"></i>
+            <!--<a href="/hall?storeid={{waitinfo.store_id}}&waitnum={{waitinfo.user_id}}" target="_blank">-->
+            等位聊天室</div>
+        <div id="social-share" class="pure-u-1-2"><i class="fa fa-share"></i>分享</div>
     </div>
 </div>
+</block>
 
 <div style="margin: 10px 5px;border-bottom: 2px solid #eee;">
 还要等这么久，不如去看看下面的东西吧～
