@@ -138,11 +138,15 @@ App.waitStore = sumeru.controller.create(function(env, session){
     };
 
     var openChat = function() {
+        loghu("open chat");
+
         var storeid = parseInt(session.get('storeid')),
             waitnum = session.get('waitnum');
         //env.redirect('/hall', {'storeid': storeid, 'waitnum': waitnum}, true);
         //window.open('/hall?storeid=' + storeid + "&waitnum=" + waitnum);
         var url = '/hall?storeid=' + storeid + "&waitnum=" + waitnum;
+        loghu("open chat: " + url);
+
         var a = document.createElement('a');
         a.setAttribute("href", url);
         a.setAttribute("target", "_blank");
