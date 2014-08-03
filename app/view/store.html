@@ -131,7 +131,7 @@
 
 <block tpl-id="storeinfo_container">
     {{#each data}}
-    <div class="store-block recommend">
+    <div class="store-block recommend" onclick="window.open('/store?id={{id}}');">
         <img class="recommend-logo" src="{{picture}}" alt="store logo">
         <div class="recommend-detail">
             <span class="recommend-name">{{name}}</span>

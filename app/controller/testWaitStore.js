@@ -137,10 +137,6 @@ App.waitStore = sumeru.controller.create(function(env, session){
         Library.touch.on('#social-share', 'tap', openShare);
     };
 
-    var $ = function(id){
-        return document.getElementById(id);
-    }
-
     var openChat = function() {
         var storeid = parseInt(session.get('storeid')),
             waitnum = session.get('waitnum');
@@ -162,10 +158,10 @@ App.waitStore = sumeru.controller.create(function(env, session){
             mediaType: "all",
             content: "我是等位达人",
             onsuccess: function() {
-                alert("asdffda");
+                loghu("share success");
             },
             onfail: function() {
-                alert("asdfasdf");
+                loghu("share fail");
             }
         });
     }
