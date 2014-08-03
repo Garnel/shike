@@ -30,13 +30,6 @@ App.hall = sumeru.controller.create(function(env, session){
     //onready is respond for event binding and data manipulate
     env.onready = function(){
         Library.touch.on('.messageSubmit', 'touchstart', submitMessage);
-
-        // hall height
-        var logo = document.getElementById("logo"),
-            hall = document.getElementById("hall"),
-            submit = document.getElementById("submit-area");
-        var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-        hall.style.height = h - logo.clientHeight - submit.clientHeight - 20 + "px";
     };
 
     var submitMessage = function(){

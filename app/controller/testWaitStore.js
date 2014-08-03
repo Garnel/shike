@@ -156,7 +156,7 @@ App.waitStore = sumeru.controller.create(function(env, session){
         loghu("open share");
         Blend.mbaas.socialshare.callShare({
             mediaType: "all",
-            content: "我是等位达人",
+            content: "我是等位达人，超过了全国90%的吃货",
             onsuccess: function() {
                 loghu("share success");
             },

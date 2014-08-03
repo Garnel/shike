@@ -10,16 +10,7 @@
         text-align: left;
         padding: 0px;
         overflow-y: scroll;
-        background: #fff;
 	}
-
-    .hall-block {
-        text-align: center;
-        padding: 0.3em 1em;
-        border-radius: 3px;
-        margin: 5px;
-        box-shadow: 1px 1px 5px #888888;
-    }
 
     #logo {
         font-size: 1.5em;
@@ -42,25 +33,28 @@
         padding: 0.5em;
         border-radius: 3px;
         margin: 5px;
-        box-shadow: 1px 1px 5px #888888;
-        background: rgb(66, 184, 221);
-        color: #fff;
+        box-shadow: 1px 1px 3px #D3D1D1;
+        background: white;
     }
 
 </style>
 
 <div id="logo">等候人群过后即焚半匿名blahblah聊天室</div>
 
-<div id="hall" class="hall-block">
+<div id="hall">
     <block tpl-id="message-hall">
         {{#each data}}
-        <div>
-            <div style="margin:5px;">{{this.waitnum}}:</div>
-            <div class="message-block">{{this.content}}</div>
+        <div class="message-block">
+            <div style="color:#999999;">{{this.waitnum}}:</div>
+            <div style="font-size:1.2em;margin-top:3px;">{{this.content}}</div>
         </div>
         {{/each}}
     </block>
 </div>
+
+<script>
+    $("#hall").height($(window).height() - 135);
+</script>
 
 <div id="submit-area" class='submit-block'>
     <div class="pure-form pure-g">

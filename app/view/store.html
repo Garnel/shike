@@ -5,7 +5,7 @@
         padding: 0.3em 1em;
         border-radius: 3px;
         margin: 5px;
-        box-shadow: 1px 1px 5px #888888;
+        box-shadow: 1px 1px 5px #D3D1D1;
     }
 
     #logo {
@@ -19,9 +19,12 @@
         text-align: left;
         padding: 0.3em;
         font-size: 1em;
-        height: 80px;
-        color: #fff;
-        background: rgb(28, 184, 65);
+        background: white;
+    }
+
+    #social {
+        border-top: 1px solid #F2F3F2;
+        margin-top: 5px;
     }
 
     #store-logo, .recommend-logo {
@@ -39,14 +42,20 @@
         word-wrap: nowrap;
     }
 
+    .recommend-desc {
+        height: 1.2em;
+        overflow-y: hidden;
+    }
+
     #store-name, .recommend-name {
         font-size: 1.3em;
         font-weight: bold;
         line-height: 40px;
+        margin-bottom: -4px;
     }
 
     .info-text {
-        background: rgb(202, 60, 60);
+        background: rgb(252, 223, 223);
         padding: 2px;
         border-radius: 1px;
     }
@@ -56,8 +65,7 @@
         padding: 0.3em;
         font-size: 1em;
         height: 80px;
-        color: #fff;
-        background: rgb(223, 117, 20);
+        background: white;
     }
 
     .next {
@@ -66,6 +74,7 @@
         vertical-align: middle;
         font-size:1.5em;
         width: auto;
+        color: #cccccc;
     }
 
     .table {
@@ -89,11 +98,6 @@
         border-radius: 5px;
     }
 
-    #social {
-        color: #fff;
-        background: rgb(66, 184, 221);
-    }
-
     #social-chat, #social-share {
         font-size: 1.2em;
         padding: 5px 0px;
@@ -115,12 +119,12 @@
             </div>
         </div>
     </div>
-</div>
 
-<div id="social" class="store-block">
-    <div style="text-align: center" class="pure-g">
-        <div id="social-chat" class="pure-u-1-2"><i class="fa fa-comment"></i>等位聊天室</div>
-        <div id="social-share" class="pure-u-1-2"><i class="fa fa-share"></i>分享</div>
+    <div id="social">
+        <div style="text-align: center" class="pure-g">
+            <div id="social-chat" class="pure-u-1-2"><i class="fa fa-comment"></i>等位聊天室</div>
+            <div id="social-share" class="pure-u-1-2"><i class="fa fa-share"></i>分享</div>
+        </div>
     </div>
 </div>
 </block>
@@ -136,8 +140,8 @@
         <div class="recommend-detail">
             <span class="recommend-name">{{name}}</span>
             <div>
-                <div class="recommend-disc">{{description}}</div>
-                <div class="recommend-disc">一般耗时 <span class="info-text">{{cost_time}}</span> 分钟</div>
+                <div class="recommend-desc">{{description}}</div>
+                <div class="recommend-cost">一般耗时 <span class="info-text">{{cost_time}}</span> 分钟</div>
             </div>
         </div>
         <i class="next fa fa-chevron-right"></i>
