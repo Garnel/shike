@@ -2,7 +2,7 @@
 <style>
     .index-block {
         text-align: center;
-        padding: 0.3em 1em;
+        padding: 0.3em;
         border-radius: 3px;
         color: #fff;
         margin: 5px;
@@ -14,6 +14,7 @@
         background: #1f8dd6;
         line-height: 30px;
 	}
+
 	#allmap {
 		width: 96%;
 		height: 300px;
@@ -22,22 +23,92 @@
 		position:absolute;
 		bottom:5px;
 	}
+
+    #store-info {
+        text-align: left;
+        height: 80px;
+        background: rgb(223, 117, 20);
+    }
+
+    #store-logo {
+        width: 70px;
+        height: 70px;
+        margin: 5px;
+        border-radius: 35px;
+        float: left;
+    }
+
+    #store-detail {
+        display: table-cell;
+        margin-left: 5px;
+        width: 100%;
+        word-wrap: nowrap;
+        text-align: left;
+    }
+
+    #store-name {
+        font-size: 1.3em;
+        font-weight: bold;
+        line-height: 40px;
+        text-align: left;
+    }
+
+    .info-text {
+        background: rgb(202, 60, 60);
+        padding: 2px;
+        border-radius: 1px;
+    }
+
+    .share{
+        line-height: 80px;
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 1.5em;
+        width: auto;
+    }
 </style>
 <script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=rZmFN56CLSMBvQWkHxs4FEHn&v=1.0"></script>
 <div id="logo" class="index-block">时客</div>
-<div>
-            <p>"你的编号":18</p>
-            <p>"还需等待":20min</p>
-            <p>"店铺":海底捞</p>
-            <p>"前面还有":20人</p>
+<block tpl-id="storeinfo_container">
+<div id="store-info" class="index-block">
+    <img id="store-logo" src="{{data.picture}}" alt="store logo">
+    <div id="store-detail">
+        <span id="store-name">{{data.name}}</span>
+        <div>
+            <div id="store-desc">{{data.description}}</div>
+            <div class="recommend-disc">一般耗时 <span class="info-text">{{data.cost_time}}</span> 分钟</div>
+        </div>
+    </div>
+    <i class="share fa fa-share" onclick="openShare()"></i>
 </div>
+</block>
+
 <div id="allmap"></div>
 <script type="text/javascript">
+    // all map height
+    var map_div = $("#allmap");
+    map_div.width($(window).width() - 10);
+    map_div.height($(window).height() - 160);
+
+    // baidu map
 	var map = new BMap.Map("allmap");
-	map.centerAndZoom(new BMap.Point(116.404, 39.915), 14);
+    map.centerAndZoom(new BMap.Point(116.384, 39.925), 14);
 	var marker1 = new BMap.Marker(new BMap.Point(116.384, 39.925));  // 创建标注
 	map.addOverlay(marker1);
 	map.addControl(new BMap.ZoomControl());
-	// map.addControl(new BMap.ScaleControl());
-	map.enableScrollWheelZoom(true);
+
+    // share
+    var openShare = function() {
+        var store_name = $("#store-name").text();
+        Blend.mbaas.socialshare.callShare({
+            mediaType: "all",
+            content: "我在" + store_name + "，这个店不错哦～",
+            onsuccess: function() {
+                console.log("share success");
+            },
+            onfail: function() {
+                console.log("share fail");
+            }
+        });
+    };
 </script>
