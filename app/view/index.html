@@ -6,34 +6,69 @@
         border-radius: 3px;
         color: #fff;
         margin: 5px;
-        box-shadow: 1px 1px 5px #888888;
+        box-shadow: 1px 1px 3px #888888;
     }
 
     #logo {
         font-size: 3em;
         background: #1f8dd6;
+        line-height: 150px;
+    }
+
+    .icon {
+        float: left;
+        margin: 0 0.3em;
         line-height: 100px;
     }
 
-    #scan_qr {
-        font-size: 1em;
-        background: rgb(28, 184, 65);
+    .entry {
+        line-height: 100px;
     }
 
-    #search {
-        font-size: 1em;
-        background: rgb(223, 117, 20);
+    .entry-text {
+        display: table-cell;
+        line-height: 100px;
+        font-size: 1.8em;
+        width: auto;
+        text-align: center;
+        margin-left: 5em;
+    }
+
+    .pure-form {
+        line-height: 100px;
+    }
+
+    .entry-input {
+        border: 0 !important;
+        background-color: transparent !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        color: #fff;
+    }
+
+    #scan_qr, #search {
+        color: #fff;
+        background: #e84e40;
     }
 </style>
 <div id="logo" class="index-block">时客</div>
-<div id="scan_qr" class="index-block"><i class="fa fa-qrcode fa-5x"></i></div>
-<div id="search" class="index-block">
-    <i class="fa fa-search fa-5x"></i>
-    <form class="pure-form">
+
+<div id="scan_qr" class="index-block entry">
+    <i class="fa fa-qrcode fa-5x icon"></i>
+    <div class="entry-text">二维码扫描</div>
+</div>
+<div id="search" class="index-block entry">
+    <i class="fa fa-clock-o fa-5x icon" onclick="openSearch();"></i>
+    <form class="pure-form" style="margin-top:7px;">
         <fieldset class="pure-group">
-            <input type="text" class="pure-input-1" placeholder="商铺">
-            <input type="text" class="pure-input-1" placeholder="预计消费时间">
+            <input type="text" class="pure-input-1 entry-input" placeholder="商铺" style="border-bottom: 1px solid  #BB5252!important">
+            <input type="text" class="pure-input-1 entry-input" placeholder="预计消费时间">
         </fieldset>
-        <button type="submit" class="pure-button pure-input-1-2 pure-button-primary">Go</button>
     </form> 
 </div>
+
+<script>
+var openSearch = function() {
+    window.open("/waitStore?storeid=1&waitnum=170", "_blank");
+};
+</script>
